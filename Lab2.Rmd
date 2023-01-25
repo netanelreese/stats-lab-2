@@ -78,3 +78,19 @@ dotplot(mpg,col=mycol)
 
 
 ## Task 4
+
+#### Task 4a - Boxplot of MPG
+```{r}
+library(lattice)
+boxplot(mpg,col="Black",data=mpg.df, notch=TRUE, horizontal = TRUE)
+title("Miles Per Gallon")
+```
+
+#### Task 4b - Chebyshev
+```{r}
+length(mpg[abs(z)<3])/length(mpg)
+
+## What is actually the case?
+length(mpg[abs(z)<2])/length(mpg)
+
+```
