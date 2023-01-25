@@ -375,9 +375,33 @@ display: none;
 </div>
 <div id="task-2" class="section level2">
 <h2>Task 2</h2>
+<div id="task-2a" class="section level4">
+<h4>Task 2a</h4>
+<pre class="r"><code>mpg.df &lt;- read.csv(&quot;EPAGAS.csv&quot;)
+head(mpg.df)</code></pre>
+<pre><code>##    MPG
+## 1 36.3
+## 2 41.0
+## 3 36.9
+## 4 37.1
+## 5 44.9
+## 6 36.8</code></pre>
+</div>
 </div>
 <div id="task-3" class="section level2">
 <h2>Task 3</h2>
+<div id="task-3a" class="section level4">
+<h4>Task 3a</h4>
+<pre class="r"><code>mpg &lt;- mpg.df$MPG</code></pre>
+</div>
+<div id="task-3b" class="section level4">
+<h4>Task 3b</h4>
+<pre class="r"><code>z &lt;- (mpg-mean(mpg))/sd(mpg)
+mean(z)</code></pre>
+<pre><code>## [1] 1.058709e-16</code></pre>
+<p><em>Mean of Z is close to zero so we can assume the statement is
+true</em></p>
+</div>
 </div>
 <div id="task-4" class="section level2">
 <h2>Task 4</h2>

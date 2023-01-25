@@ -15,5 +15,22 @@ knitr::opts_chunk$set(echo = TRUE)
 getwd()
 ```
 ## Task 2
+#### Task 2a
+```{r}
+mpg.df <- read.csv("EPAGAS.csv")
+head(mpg.df)
+```
 ## Task 3
+#### Task 3a
+```{r}
+mpg <- mpg.df$MPG
+```
+
+#### Task 3b
+```{r}
+z <- (mpg-mean(mpg))/sd(mpg)
+mean(z)
+```
+*Mean of Z is close to zero so we can assume the statement is true*
+
 ## Task 4
