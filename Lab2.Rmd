@@ -33,4 +33,48 @@ mean(z)
 ```
 *Mean of Z is close to zero so we can assume the statement is true*
 
+#### Task 3c - Possible Outliers
+
+```{r}
+# Find the z values greater than 3 in size
+z[abs(z)>3]
+
+# Find the I values corresponding to these z values
+mpg[abs(z)>3]
+
+# Find the values of z that are possible outliers
+z[abs(z)>=2 & abs(z)<=3]
+
+#Find the values of MPG which are possible outliers
+ mpg[abs(z)>=2 & abs(z)<=3]
+
+```
+
+#### Task 3d - Defined Outliers
+
+```{r}
+z[abs(z)>3]
+mpg[abs(z)>3]
+```
+
+#### Task 3e - Show possible and defined outliers
+
+```{r}
+# Plot the outliers in red and the possible outliers in blue
+mycol = ifelse(abs(z)>3, "Red",
+        ifelse(abs(z)>=2 &abs(z)<=3,"Blue", "Black"))  
+
+#Plot points with different plotting shapes        
+mypch = ifelse(abs(z)>3, 20,
+        ifelse(abs(z)>=2 &abs(z)<=3,21, 22))
+
+#Use an installed library 
+# You will need to install the "lattice" package -- unless using the Lab computers
+#In R go to Packages   -- select "install packages" choose a mirror and then the "lattice" package
+# Now issue the following commands
+library(lattice)
+dotplot(mpg,col=mycol)
+```
+
+
 ## Task 4
