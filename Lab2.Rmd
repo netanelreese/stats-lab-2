@@ -93,4 +93,22 @@ length(mpg[abs(z)<3])/length(mpg)
 ## What is actually the case?
 length(mpg[abs(z)<2])/length(mpg)
 
+length(mpg[mean(mpg)-2*sd(mpg) < mpg & mpg < mean(mpg)+ 2*sd(mpg) ])/length(mpg)
+
+classrange=45.0-29.9
+inc=classrange/10
+bins=seq(29.9,45.0,by=inc)
+bins
+with(mpg.df,cut(MPG,bins))
+cl= with(mpg.df,cut(MPG,bins))
+cl.tab=table(cl)
+cl.tab
+barplot(cl.tab)
+mpg.df$MPG->mpg
+length(mpg)
+
+n=length(mpg)
+barplot(cl.tab,las=2,main="Frequency Histogram",ylab="Frequency",space=0)
+barplot(cl.tab/n,las=2,main="Relative Frequency Histogram",ylab="Relative frequency",space=0)
+barplot(cl.tab/(n*inc),las=2,main="Density Histogram",ylab="Density",space=0)
 ```
